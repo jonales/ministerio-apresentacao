@@ -28,13 +28,19 @@ Sistema da **Assembleia de Deus Missão de Águas Lindas de Goiás (ADEALGO)**, 
 
 ### Página inicial
 
-O banner mostra fotos da igreja sob um degradê e dois botões: "Faça parte da família" e "Encontre uma congregação".
+O banner mostra fotos da igreja sob um degradê e dois botões: "Faça parte da família" e "Encontre uma congregação". O título, a linha de cima e as fotos do fundo são editáveis pelo painel, em **Conteúdo do Site**.
 
 ![Página inicial](docs/telas/01-site-inicio.jpg)
 
+### Avisos e destaques
+
+Logo abaixo do topo aparecem os avisos cadastrados no painel, com imagem, texto e botão opcionais. Cada aviso pode ter um período para aparecer (por exemplo, só na semana do evento). Sem nenhum aviso vigente, a seção não aparece.
+
+![Avisos e destaques](docs/telas/01b-site-avisos.jpg)
+
 ### História do Ministério
 
-O texto é editável pelo painel, em **Conteúdo do Site**.
+O texto e as fotos que passam ao lado dele são editáveis pelo painel, em **Conteúdo do Site**.
 
 ![História do Ministério](docs/telas/02-site-historia.jpg)
 
@@ -139,19 +145,26 @@ Congregações com endereço e coordenadas para o mapa. Eventos com banner, tipo
 |---|---|
 | ![Congregações](docs/telas/17-admin-congregacoes.jpg) | ![Eventos](docs/telas/18-admin-eventos.jpg) |
 
-#### Cultos e cards do site
+#### Cultos
 
-Agenda semanal de cultos de cada congregação e cards de destaque do site.
+Agenda semanal de cultos de cada congregação.
 
-| Cultos | Cards do site |
-|---|---|
-| ![Cultos](docs/telas/19-admin-cultos.jpg) | ![Cards](docs/telas/20-admin-cards.jpg) |
+![Cultos](docs/telas/19-admin-cultos.jpg)
 
 ### Conteúdo do site
 
-Edição da **História do Ministério** exibida na página inicial. Os parágrafos são separados por uma linha em branco. A tela mostra quem fez a última alteração e quando.
+Tudo o que aparece na página inicial fica em um só lugar, em abas na ordem da página:
 
-![Conteúdo do site](docs/telas/21-admin-conteudo-site.jpg)
+- **Topo da página**: título, linha de cima e fotos do fundo. As fotos podem ser enviadas, reordenadas, ocultadas ou removidas; no celular aparece só a primeira.
+- **História do Ministério**: texto (parágrafos separados por uma linha em branco) e as fotos de rolagem ao lado dele.
+- **Avisos e destaques**: avisos com imagem, link, ordem e período. A lista mostra se cada um está no site, agendado, encerrado ou oculto.
+- **Outras seções**: atalhos para os cadastros que alimentam o resto da página (Pastores, Cultos, Eventos e Congregações).
+
+As fotos enviadas são convertidas para JPEG e reduzidas automaticamente, para o site carregar rápido. Cada seção mantém pelo menos uma foto visível. A tela mostra quem fez a última alteração e quando.
+
+| Topo da página | Avisos e destaques |
+|---|---|
+| ![Conteúdo do site](docs/telas/21-admin-conteudo-site.jpg) | ![Avisos e destaques](docs/telas/20-admin-avisos.jpg) |
 
 ### Documentos, carteirinhas e relatórios
 
