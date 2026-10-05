@@ -199,6 +199,8 @@ Cada carta é registrada com destino, cidade, data e, na recomendação, validad
 - **Disciplina:** como atesta plena comunhão, a carta **não é emitida para membro em disciplina**.
 - **Validade:** a recomendação vencida também não é emitida.
 - **Acesso:** pela lista de membros, o botão de carta já abre o cadastro com o membro.
+- **Layout:** igual ao da carta feita à mão. Na coluna "Pertencente à congregação" saem as congregações com o quadradinho (☒ na da carta), o nome em letras condensadas e o endereço abaixo; o texto sai com serifa, o nome do membro em negrito e, abaixo das linhas, o nome e o cargo de quem assina (também na via para assinar à mão).
+- **Congregações na carta:** em **Congregações**, cada uma tem "Nome nas cartas" (ex.: JARDIM DA B. II), "Endereço nas cartas" e "Posição" (vazio = não aparece; a congregação da carta aparece sempre). Os valores iniciais vieram da carta em uso.
 
 ![Cartas](docs/telas/23b-admin-cartas.jpg)
 
