@@ -204,6 +204,32 @@ Cada carta é registrada com destino, cidade, data e, na recomendação, validad
 
 ![Carta de recomendação](docs/telas/23d-carta-recomendacao.jpg)
 
+#### Ofícios à convenção
+
+Ofícios para a CONFRAMADEGO (separação ao diaconato e ao presbitério, consagração a evangelista, ordenação a pastor, retirada de processo de ordenação, filiação e desligamento), feitos no sistema em vez do Word, com numeração controlada e o histórico de cada um. Fica em **Documentos e Relatórios > Ofícios**.
+
+**Como funciona:**
+
+1. **Rascunho:** quem tem a permissão escolhe o modelo e o membro. O sistema preenche nome, cargo atual (a última consagração), cargo pretendido (Diácono ou Diaconisa, conforme o sexo) e congregação. Falta só a data da assembleia e, se quiser, ajustar o texto. O que ainda precisa ser completado aparece como `[preencher: ...]` e impede o envio. Também há o **ofício livre**, para outros assuntos, e dá para escrever o nome de um obreiro que não é membro.
+2. **Aprovação:** o rascunho vai para os **aprovadores** escolhidos pelo administrador (ex.: o pastor presidente). Eles recebem aviso por e-mail (com o envio de e-mails ligado) e veem a quantidade pendente no menu. O aprovador confere o PDF do rascunho (com a marca "RASCUNHO") e **aprova** ou **devolve** dizendo o que corrigir.
+3. **Número:** só a aprovação dá o número, no formato dos ofícios em Word (**07/2026**), em sequência por ano, sem pular nem repetir. Ofício aprovado não é excluído: se não valer mais, é **cancelado** com o motivo e o número continua no livro.
+4. **PDF:** com o timbre (CGADB, ADEALGO e CONFRAMADEGO, nome e dados da igreja), o nome e o cargo de quem aprovou (e a assinatura digitalizada, se cadastrada) e um **QR Code** que leva à conferência pública do ofício.
+5. **Envio e resposta:** registra-se quando e como foi enviado à convenção e a resposta (deferido ou indeferido). No deferido, a tela lembra de registrar a consagração na ficha do membro.
+
+**Quem faz o quê:** permissão **Ofícios** no Controle de Acesso (Visualizar = lista e PDF; Editar = criar e enviar para aprovação; Emitir = registrar envio, resposta e cancelar). Quem aprova é escolhido em **Ofícios > Configuração**, e o aprovador acessa os ofícios mesmo sem a permissão do perfil. Pastor e secretário veem os ofícios da própria congregação; aprovadores e o administrador veem todos.
+
+**Configuração (administrador):** os textos dos modelos (com as variáveis `{{nome}}`, `{{cargo_atual}}`, `{{cargo_pretendido}}`, `{{data_assembleia}}`, `{{congregacao}}` e `{{igreja}}`), os aprovadores, o timbre, o destinatário padrão e a **numeração**. Para continuar a sequência feita no Word, informe o número do próximo ofício do ano (ex.: 7, se o último foi o 06/2026).
+
+| Livro de ofícios | Novo ofício |
+|---|---|
+| ![Livro de ofícios](docs/telas/43-oficios-livro.jpg) | ![Novo ofício](docs/telas/44-oficio-novo.jpg) |
+
+| Aprovação | Configuração |
+|---|---|
+| ![Aprovação do ofício](docs/telas/45-oficio-aprovacao.jpg) | ![Configuração dos ofícios](docs/telas/47-oficios-configuracao.jpg) |
+
+![Ofício aprovado em PDF](docs/telas/46-oficio-pdf.jpg)
+
 #### Apresentação de crianças
 
 A apresentação é o registro oficial, e **é o único lugar onde o certificado de apresentação é emitido**.
