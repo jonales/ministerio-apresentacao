@@ -83,6 +83,12 @@ Endereço de cada congregação, com link para o Google Maps. O mapa interativo 
 
 ![Congregações](docs/telas/07-site-congregacoes.jpg)
 
+### Conferir documento
+
+Ofícios e carteirinhas trazem um QR Code que abre a conferência pública do documento: situação, número, data e, no ofício, o assunto e quem assinou. O QR usa um endereço curto (`/v/código`), mais fácil de ler no papel. Se o QR não puder ser lido, a página **Conferir documento** (link no rodapé do site) aceita o código impresso no rodapé do ofício, em maiúsculas ou minúsculas, ou o link colado. Os endereços dos documentos já impressos continuam funcionando.
+
+![Conferir documento](docs/telas/07b-site-conferir.jpg)
+
 ### No celular e acesso restrito
 
 O site se adapta a telas pequenas. O botão **Área Restrita** leva ao login.
@@ -173,7 +179,7 @@ As fotos enviadas são convertidas para JPEG e reduzidas automaticamente, para o
 Carteirinhas do Ministério e da Convenção, impressas em PDF e exibidas como carteirinha digital no portal do membro.
 
 - **Validade de 1 ano a partir da emissão.** Cada carteirinha recebe um número (`MN-2026-000012` no Ministério, `CV-...` na Convenção) e um código aleatório para o QR Code. Reimprimir o PDF mantém o número e o QR da carteirinha válida. Se ela estiver vencida, uma nova é emitida.
-- **QR Code de conferência** no verso: abre a página pública `validar.xhtml`, que mostra só a situação, o nome, a função, a congregação, o número e a validade. O CPF não aparece nem no QR nem nessa página, e a página não é indexada por buscadores.
+- **QR Code de conferência** no verso: o endereço curto `/v/código` abre a página pública `validar.xhtml`, que mostra só a situação, o nome, a função, a congregação, o número e a validade. O CPF não aparece nem no QR nem nessa página, e a página não é indexada por buscadores.
 - **Quem pode ter:** membros com congregação ativa. Crianças apresentadas ficam de fora. A carteirinha da **Convenção** é só para quem tem os números de registro da **CGADB** e da **CONFRAMADEGO** no cadastro do membro (campos na ficha).
 - **Situação** na lista: *Válida*, *Vencida*, *Suspensa*, *Cancelada*, *Substituída por nova via* ou *Sem vínculo ativo*. Membro em disciplina aparece como suspenso; membro desligado (última movimentação é uma saída) aparece sem vínculo ativo. Isso vale também na conferência pelo QR, que não mostra o motivo.
 - **Ações da secretaria:** PDF, *Nova via* (a anterior deixa de valer), *Suspender* e *Cancelar* (com motivo) e *Reativar*. Tudo fica registrado na Auditoria. Os filtros mostram quem ainda não tem carteirinha e quais vencem em 30 dias.
@@ -228,7 +234,7 @@ Ofícios para a CONFRAMADEGO (separação ao diaconato e ao presbitério, consag
 1. **Rascunho:** quem tem a permissão escolhe o modelo e o membro. O sistema preenche nome, cargo atual (a última consagração), cargo pretendido (Diácono ou Diaconisa, conforme o sexo) e congregação. Falta só a data da assembleia e, se quiser, ajustar o texto. O que ainda precisa ser completado aparece como `[preencher: ...]` e impede o envio. Também há o **ofício livre**, para outros assuntos, e dá para escrever o nome de um obreiro que não é membro.
 2. **Aprovação:** o rascunho vai para os **aprovadores** escolhidos pelo administrador (ex.: o pastor presidente). Eles recebem aviso por e-mail (com o envio de e-mails ligado) e veem a quantidade pendente no menu. O aprovador confere o PDF do rascunho (com a marca "RASCUNHO") e **aprova** ou **devolve** dizendo o que corrigir.
 3. **Número:** só a aprovação dá o número, no formato dos ofícios em Word (**07/2026**), em sequência por ano, sem pular nem repetir. Ofício aprovado não é excluído: se não valer mais, é **cancelado** com o motivo e o número continua no livro.
-4. **PDF:** com o timbre (CGADB, ADEALGO e CONFRAMADEGO, nome e dados da igreja), o nome e o cargo de quem aprovou (e a assinatura digitalizada, se cadastrada) e um **QR Code** que leva à conferência pública do ofício.
+4. **PDF:** com o timbre (CGADB, ADEALGO e CONFRAMADEGO, nome e dados da igreja), o nome e o cargo de quem aprovou (e a assinatura digitalizada, se cadastrada) e um **QR Code** que leva à conferência pública do ofício. O rodapé traz também o código do ofício (ex.: `OFPATXY79C2S`) para digitar em **Conferir documento**, caso o QR não possa ser lido.
 5. **Envio e resposta:** registra-se quando e como foi enviado à convenção e a resposta (deferido ou indeferido). No deferido, a tela lembra de registrar a consagração na ficha do membro.
 
 **Quem faz o quê:** permissão **Ofícios** no Controle de Acesso (Visualizar = lista e PDF; Editar = criar e enviar para aprovação; Emitir = registrar envio, resposta e cancelar). Quem aprova é escolhido em **Ofícios > Configuração**, e o aprovador acessa os ofícios mesmo sem a permissão do perfil. Pastor e secretário veem os ofícios da própria congregação; aprovadores e o administrador veem todos.
