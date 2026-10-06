@@ -180,7 +180,7 @@ Carteirinhas do Ministério e da Convenção, impressas em PDF e exibidas como c
 - A foto só sai na carteirinha se o membro permitir no termo de privacidade (permitido por padrão).
 - **Google Wallet:** com a conta configurada (ver [Google Wallet](#google-wallet)), o membro vê o botão **Adicionar à Google Wallet** na carteirinha válida. O cartão leva nome, função, congregação, número, validade e o mesmo QR Code de conferência, sem CPF e sem foto. Suspender, reativar, cancelar ou emitir nova via atualiza o cartão já salvo no celular. Se o Google estiver fora do ar, a ação da secretaria vale assim mesmo e a falha fica no log. A tela de carteirinhas mostra se a Google Wallet está ativa.
 - **Apple Wallet:** com o certificado configurado (ver [Apple Wallet](#apple-wallet)), o membro baixa o cartão (`.pkpass`) pelo botão **Adicionar à Apple Wallet**. O cartão traz os mesmos dados e o QR Code de conferência, mais a foto se o membro permitir. Suspender, reativar, cancelar ou emitir nova via avisa o iPhone por push, e ele baixa a versão nova sozinho. Suspensa aparece em cinza; cancelada ou substituída fica anulada na Wallet.
-- Em produção, defina `ministerio.url-publica` (ex.: `https://adealgo.com.br`) para que o QR Code aponte sempre para o endereço público. Sem essa propriedade, o QR usa o endereço da requisição.
+- O QR Code aponta para o **endereço do sistema**, definido na instalação (ver [Endereço do sistema](#endereço-do-sistema)).
 
 ![Carteirinhas](docs/telas/22-admin-carteirinhas.jpg)
 
