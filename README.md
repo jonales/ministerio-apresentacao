@@ -460,10 +460,10 @@ Site, painel, portal, e-mails e carteirinhas digitais usam a cor **Marsala** (Pa
 
 ## Tecnologias
 
-- **Java 17+**, **Spring Boot 3** (aplicação empacotada como WAR `ROOT.war`)
-- **JoinFaces** com **Jakarta Faces 4 (Mojarra)** e **PrimeFaces 14**
+- **Java 21**, **Spring Boot 3.5** (aplicação empacotada como WAR `ROOT.war`)
+- **JoinFaces 5.5** com **Jakarta Faces 4 (Mojarra)** e **PrimeFaces 16**
 - **Spring Security 6**: login, perfis e filtro de permissões por URL
-- **Spring Data JPA / Hibernate 6** com **MySQL** (testado também em MariaDB)
+- **Spring Data JPA / Hibernate 6.6** com **MySQL** (testado também em MariaDB)
 - **Flyway** para as migrações do banco (`src/main/resources/db/migration` e `src/main/java/db/migration`)
 - **JasperReports** para carteirinhas, certificados, cartas e relatórios em PDF
 - **ZXing** para o QR Code de conferência das carteirinhas
