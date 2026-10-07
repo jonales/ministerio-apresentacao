@@ -133,6 +133,26 @@ Histórico de admissão, saída e retorno do membro.
 
 ![Movimentações](docs/telas/14-admin-movimentacoes.jpg)
 
+#### Visitantes
+
+Registro simples de quem visita a igreja, para apresentar no culto e, mais adiante, ligar e marcar visita.
+
+- **Porteiro (perfil Recepção):** usuário próprio, ligado à congregação. Ao entrar, cai direto na página **Registrar visitante**, feita para o celular.
+  - Campos obrigatórios: nome completo e celular com DDD.
+  - Campos opcionais: primeira vez na igreja, quem convidou e bairro.
+  - **Aceita receber contato:** sem esse "sim", a igreja não liga nem marca visita (LGPD).
+  - O culto vem da agenda da congregação (**Igreja e Agenda › Cultos**). O sistema sugere o culto do horário e o porteiro pode trocar.
+  - Abaixo, os nomes registrados hoje na congregação, sem telefone, com os botões para corrigir a digitação ou remover um lançamento errado. O porteiro não entra no painel.
+- **Mesma pessoa:** o mesmo celular na mesma congregação é a mesma pessoa; quem volta aparece como "2ª visita", "3ª visita" e assim por diante. O mesmo celular não é registrado duas vezes no mesmo dia.
+- **Visitantes de hoje (pastor):** menu **Pessoas › Visitantes de hoje**. Só os nomes, em letra grande, separados por culto, com "primeira vez", o número da visita e quem convidou. A página se atualiza sozinha a cada 30 segundos, e um toque no nome marca como apresentado.
+- **Observação de segurança:** campo opcional do registro para anotar alguém que chamou a atenção. Só o pastor e o administrador veem. Não se pede foto nem documento: nome, celular e horário já ficam registrados, com quem registrou.
+- **Permissão:** módulo **Visitantes** no Controle de Acesso (Visualizar = visitantes de hoje; Editar = registrar e corrigir, pelo menu **Registrar visitante**; Emitir = relatórios, na próxima etapa). Pastor e secretário começam com Visualizar e Editar e ficam na própria congregação.
+- **LGPD:** quem passa 2 anos sem voltar tem o nome, o celular e o bairro apagados automaticamente. As visitas continuam contando nos totais.
+
+| Registrar visitante (celular do porteiro) | Visitantes de hoje (pastor) |
+|---|---|
+| ![Registrar visitante](docs/telas/54-recepcao-visitantes.jpg) | ![Visitantes de hoje](docs/telas/55-admin-visitantes-hoje.jpg) |
+
 ### Pastores, congregações e agenda
 
 #### Pastores
@@ -470,6 +490,7 @@ Cada membro só consegue baixar os próprios documentos.
 | **Administrador** | Todo o painel. Somente ele acessa controle de acesso, auditorias e modelos de documento. |
 | **Pastor** | Painel conforme a matriz de **Controle de Acesso**. |
 | **Secretário** | Painel conforme a matriz de **Controle de Acesso**. |
+| **Recepção** | Porteiro: só a página **Registrar visitante**, da própria congregação. |
 | **Membro** | Somente o portal do membro. |
 
 Qualquer perfil vinculado a um cadastro de membro também tem o portal do membro para os próprios dados (seção **Minha área**).
