@@ -322,6 +322,32 @@ Registro de cada documento emitido, das tentativas de login e das alterações c
 |---|---|---|
 | ![Log de emissões](docs/telas/30-admin-log-emissoes.jpg) | ![Log de autenticação](docs/telas/31-admin-log-autenticacao.jpg) | ![Auditoria](docs/telas/32-admin-auditoria.jpg) |
 
+#### Privacidade (LGPD)
+
+Menu **Administração › Privacidade (LGPD)**, com permissão própria (**termo_privacidade**) no Controle de Acesso. No começo só o administrador acessa. Ao liberar para pastor ou secretário:
+
+- **Visualizar:** termo em vigor, versões e aceites.
+- **Editar:** rascunho do termo e encarregado.
+- **Emitir:** publicar uma nova versão.
+
+O termo é **versionado**:
+
+1. **Rascunho.** Parte da versão em vigor. Os membros continuam vendo a versão em vigor até a publicação. Uma linha em branco separa os parágrafos e `**texto**` fica em negrito; HTML digitado aparece como texto.
+2. **Pré-visualizar e comparar.** A comparação com a versão em vigor mostra riscado o que sai e em verde o que entra.
+3. **Publicar.** É preciso dizer o que mudou. Há duas opções:
+   - **Exigir novo aceite:** todos os membros, inclusive quem já está logado, são levados ao termo no próximo acesso e veem o resumo das mudanças;
+   - **Ajuste sem novo aceite:** os aceites anteriores continuam valendo.
+
+Uma versão publicada não muda mais. A aba **Versões** guarda todas, com quem publicou, quando e o texto de cada uma. Cada publicação também entra na **Auditoria geral**.
+
+Na aba **Encarregado (DPO)** ficam o nome, o e-mail e o telefone do encarregado pelos dados (pessoa ou setor). Eles aparecem no fim do termo, no portal.
+
+Na **ficha do membro**, um selo mostra se ele aceitou a versão exigida, se o novo aceite está pendente ou se ainda não aceitou, junto com as autorizações de foto, de imagem e de e-mails. O botão **Histórico** lista todos os aceites, com versão, origem, usuário e IP. O selo é **só leitura**: as escolhas são do próprio membro, no portal.
+
+| Termo: rascunho e comparação | Versões | Selo na ficha do membro |
+|---|---|---|
+| ![Rascunho e comparação](docs/telas/48-admin-privacidade-termo.jpg) | ![Versões do termo](docs/telas/49-admin-privacidade-versoes.jpg) | ![Selo LGPD na ficha](docs/telas/50-admin-membro-lgpd.jpg) |
+
 #### Comunicação por e-mail
 
 Menu **Comunicação**, com permissão própria (**comunicacao**) no Controle de Acesso. No começo só o administrador acessa. Ao liberar para pastor ou secretário:
@@ -401,7 +427,9 @@ Administrador, pastor e secretário também podem ser membros. Se o usuário tiv
 
 As duas vêm marcadas por padrão. Enquanto o termo não for aceito, as páginas do portal levam a ele. As escolhas podem ser mudadas depois pelo menu **Privacidade**. Cada aceite fica registrado com data, usuário, IP e versão do termo.
 
-O texto atual é um **modelo**, a ser padronizado com o jurídico. Ao trocar o texto, altere `ConsentimentoLgpdService.VERSAO_TERMO`: todos os membros aceitam a nova versão no próximo acesso.
+O texto inicial é um **modelo**, a ser padronizado com o jurídico. Ele é editado no painel, em [Privacidade (LGPD)](#privacidade-lgpd). Quando uma nova versão exige novo aceite, o portal mostra ao membro o que mudou desde o último aceite.
+
+![Novo aceite do termo](docs/telas/51-membro-novo-aceite.jpg)
 
 **Carteirinha**: a carteirinha digital mostra nome, função, congregação, número, validade, situação e o QR Code de conferência. O membro emite ou renova a própria carteirinha e baixa o PDF. A carteirinha da Convenção só fica disponível para quem tem os registros CGADB e CONFRAMADEGO no cadastro. Os cartões da Google Wallet e da Apple Wallet vêm numa próxima etapa e serão oferecidos só a membros com usuário no portal.
 
