@@ -327,7 +327,7 @@ Registro de cada documento emitido, das tentativas de login e das alterações c
 Menu **Administração › Privacidade (LGPD)**, com permissão própria (**termo_privacidade**) no Controle de Acesso. No começo só o administrador acessa. Ao liberar para pastor ou secretário:
 
 - **Visualizar:** termo em vigor, versões e aceites.
-- **Editar:** rascunho do termo e encarregado.
+- **Editar:** rascunho do termo, encarregado e aceite em papel.
 - **Emitir:** publicar uma nova versão.
 
 O termo é **versionado**:
@@ -338,9 +338,24 @@ O termo é **versionado**:
    - **Exigir novo aceite:** todos os membros, inclusive quem já está logado, são levados ao termo no próximo acesso e veem o resumo das mudanças;
    - **Ajuste sem novo aceite:** os aceites anteriores continuam valendo.
 
+   Com novo aceite, a opção **Avisar por e-mail** (marcada por padrão) põe na fila um aviso para os membros com acesso ao portal, com o resumo das mudanças e o botão **Ler o termo**. Por ser um aviso do serviço, vai também para quem não recebe comunicados. O texto fica em **Comunicação › Modelos de e-mail** ("Termo de privacidade atualizado").
+
 Uma versão publicada não muda mais. A aba **Versões** guarda todas, com quem publicou, quando e o texto de cada uma. Cada publicação também entra na **Auditoria geral**.
 
 Na aba **Encarregado (DPO)** ficam o nome, o e-mail e o telefone do encarregado pelos dados (pessoa ou setor). Eles aparecem no fim do termo, no portal.
+
+A aba **Aceites** mostra a situação de cada membro (sem crianças e sem desligados):
+
+- **Números:** membros, quantos aceitaram a versão exigida, quantos estão com novo aceite pendente ou sem aceite, quantos não autorizam o uso de imagem e quantos não querem foto na carteirinha.
+- **Filtros:** nome, congregação, situação e "não autorizam imagem". O botão de histórico mostra todos os aceites do membro.
+- **Planilhas (CSV):** a tabela com os filtros e a **lista para a mídia**, só com quem não autoriza o uso de imagem, por congregação. As planilhas não levam CPF. O link `admin/privacidade.xhtml?aba=imagem` abre a aba já filtrada.
+- **Aceite em papel:** para quem assinou o termo impresso na secretaria. Informe o membro, a versão assinada, a data da assinatura e as escolhas (foto, imagem, e-mails), e anexe o termo assinado digitalizado (PDF, JPG ou PNG, até 10 MB; o tipo é conferido pelo conteúdo do arquivo). O aceite fica como **Papel**, com quem registrou e quando, vale no portal como o aceite do próprio membro e entra na **Auditoria geral**. O termo assinado abre pela tabela, pelo histórico e pela ficha do membro.
+
+Pastor e secretário veem e registram só os membros da própria congregação, salvo com "Ver todas as congregações".
+
+| Aceites | Aceite em papel |
+|---|---|
+| ![Aceites do termo](docs/telas/52-admin-privacidade-aceites.jpg) | ![Aceite em papel](docs/telas/53-admin-aceite-papel.jpg) |
 
 Na **ficha do membro**, um selo mostra se ele aceitou a versão exigida, se o novo aceite está pendente ou se ainda não aceitou, junto com as autorizações de foto, de imagem e de e-mails. O botão **Histórico** lista todos os aceites, com versão, origem, usuário e IP. O selo é **só leitura**: as escolhas são do próprio membro, no portal.
 
@@ -366,6 +381,7 @@ Pastor e secretário só enviam para a própria congregação e veem só os envi
 | Boas-vindas ao membro | Quando um membro é cadastrado com e-mail. |
 | Novo evento | Quando um evento é cadastrado (vai para a congregação do evento ou para todos) ou ao divulgar um evento. |
 | Comunicado | Texto inicial dos comunicados lançados em Envios. |
+| Termo de privacidade atualizado | Ao publicar uma versão do termo que exige novo aceite, com "Avisar por e-mail" marcado. Vai para os membros com acesso ao portal. |
 | Conta criada, Esqueci minha senha, Senha alterada | E-mails da conta, sempre enviados. |
 
 Os três primeiros têm uma chave **liga/desliga** e começam **desligados**.
