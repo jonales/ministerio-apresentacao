@@ -363,8 +363,8 @@ Registro de cada documento emitido, das tentativas de login e das alterações c
 
 Menu **Administração › Privacidade (LGPD)**, com permissão própria (**termo_privacidade**) no Controle de Acesso. No começo só o administrador acessa. Ao liberar para pastor ou secretário:
 
-- **Visualizar:** termo em vigor, versões e aceites.
-- **Editar:** rascunho do termo, encarregado e aceite em papel.
+- **Visualizar:** termo em vigor, versões, aceites e pedidos do titular.
+- **Editar:** rascunho do termo, encarregado, aceite em papel e atender pedidos.
 - **Emitir:** publicar uma nova versão.
 
 O termo é **versionado**:
@@ -388,11 +388,27 @@ A aba **Aceites** mostra a situação de cada membro (sem crianças e sem deslig
 - **Planilhas (CSV):** a tabela com os filtros e a **lista para a mídia**, só com quem não autoriza o uso de imagem, por congregação. As planilhas não levam CPF. O link `admin/privacidade.xhtml?aba=imagem` abre a aba já filtrada.
 - **Aceite em papel:** para quem assinou o termo impresso na secretaria. Informe o membro, a versão assinada, a data da assinatura e as escolhas (foto, imagem, e-mails), e anexe o termo assinado digitalizado (PDF, JPG ou PNG, até 10 MB; o tipo é conferido pelo conteúdo do arquivo). O aceite fica como **Papel**, com quem registrou e quando, vale no portal como o aceite do próprio membro e entra na **Auditoria geral**. O termo assinado abre pela tabela, pelo histórico e pela ficha do membro.
 
+O histórico de cada membro tem o **comprovante do aceite** em PDF: nome, CPF mascarado, versão aceita, como e quando (portal, com usuário e IP, ou papel, com quem registrou), as escolhas e o **texto integral** da versão aceita. O membro baixa o dele no portal.
+
+A aba **Pedidos** reúne os **pedidos do titular** (LGPD, art. 18):
+
+- **Tipos:** cópia dos dados, correção, exclusão, informação sobre o uso e outro. Correção e "outro" pedem a descrição.
+- **Origem:** o membro pede pelo portal, em **Privacidade**, ou a secretaria registra o pedido feito pessoalmente (**Registrar pedido feito na secretaria**).
+- **Prazo:** 15 dias. A tabela vem ordenada pelo prazo e mostra "faltam N dias", "vence hoje" ou "vencido há N dias". O filtro mostra os em aberto, os vencidos, os encerrados ou todos. O link `admin/privacidade.xhtml?aba=pedidos` abre a aba.
+- **Atender:** situação (aberto, em andamento, atendido, recusado), responsável e a **resposta ao membro**, obrigatória para encerrar. O membro vê a resposta no portal. Para a cópia dos dados, a linha tem o atalho para a **ficha cadastral** em PDF.
+- **Início do painel:** quem vê a privacidade vê quantos pedidos estão em aberto e quantos estão vencidos.
+
+Cada pedido e cada atendimento entram na **Auditoria geral**.
+
 Pastor e secretário veem e registram só os membros da própria congregação, salvo com "Ver todas as congregações".
 
 | Aceites | Aceite em papel |
 |---|---|
 | ![Aceites do termo](docs/telas/52-admin-privacidade-aceites.jpg) | ![Aceite em papel](docs/telas/53-admin-aceite-papel.jpg) |
+
+| Pedidos do titular | Comprovante do aceite |
+|---|---|
+| ![Pedidos do titular](docs/telas/58-admin-privacidade-pedidos.jpg) | ![Comprovante do aceite](docs/telas/59-comprovante-lgpd.jpg) |
 
 Na **ficha do membro**, um selo mostra se ele aceitou a versão exigida, se o novo aceite está pendente ou se ainda não aceitou, junto com as autorizações de foto, de imagem e de e-mails. O botão **Histórico** lista todos os aceites, com versão, origem, usuário e IP. O selo é **só leitura**: as escolhas são do próprio membro, no portal.
 
@@ -483,6 +499,10 @@ As duas vêm marcadas por padrão. Enquanto o termo não for aceito, as páginas
 O texto inicial é um **modelo**, a ser padronizado com o jurídico. Ele é editado no painel, em [Privacidade (LGPD)](#privacidade-lgpd). Quando uma nova versão exige novo aceite, o portal mostra ao membro o que mudou desde o último aceite.
 
 ![Novo aceite do termo](docs/telas/51-membro-novo-aceite.jpg)
+
+Na mesma página ficam o link **Baixar o comprovante do seu aceite (PDF)** e a seção **Seus direitos sobre os seus dados**. Nela o membro pede uma cópia dos dados, a correção de um dado errado, a exclusão de dados ou informações sobre o uso, e acompanha cada pedido: situação, prazo de resposta (15 dias) e a resposta da igreja. Essa seção não depende do aceite do termo. Para evitar excessos, cada membro tem até 5 pedidos em andamento ao mesmo tempo.
+
+![Seus direitos no portal](docs/telas/60-membro-pedidos.jpg)
 
 **Carteirinha**: a carteirinha digital mostra nome, função, congregação, número, validade, situação e o QR Code de conferência. O membro emite ou renova a própria carteirinha e baixa o PDF. A carteirinha da Convenção só fica disponível para quem tem os registros CGADB e CONFRAMADEGO no cadastro. Os cartões da Google Wallet e da Apple Wallet vêm numa próxima etapa e serão oferecidos só a membros com usuário no portal.
 
