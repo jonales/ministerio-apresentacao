@@ -145,13 +145,22 @@ Registro simples de quem visita a igreja, para apresentar no culto e, mais adian
   - Abaixo, os nomes registrados hoje na congregação, sem telefone, com os botões para corrigir a digitação ou remover um lançamento errado. O porteiro não entra no painel.
 - **Mesma pessoa:** o mesmo celular na mesma congregação é a mesma pessoa; quem volta aparece como "2ª visita", "3ª visita" e assim por diante. O mesmo celular não é registrado duas vezes no mesmo dia.
 - **Visitantes de hoje (pastor):** menu **Pessoas › Visitantes de hoje**. Só os nomes, em letra grande, separados por culto, com "primeira vez", o número da visita e quem convidou. A página se atualiza sozinha a cada 30 segundos, e um toque no nome marca como apresentado.
+- **Acompanhamento (pastor e secretaria):** menu **Pessoas › Acompanhamento de visitantes**.
+  - A lista abre nos **pendentes**: quem autorizou contato e ainda não foi visitado. Mostra o celular, os botões **Ligar** e **WhatsApp**, o número de visitas e a última visita.
+  - Filtros por nome, congregação, situação e período da última visita.
+  - Quem não autorizou contato aparece sem o celular, e não dá para marcar contato nem visita.
+  - **Acompanhar** abre a situação (A contatar, Contatado, Visita marcada, Visitado, Não quer contato, Tornou-se membro), o responsável, o dia e a hora da visita marcada e uma anotação. Cada mudança fica no histórico do visitante, com quem fez e quando, junto com as visitas dele.
+  - "Não quer contato" retira a autorização; ela volta se o visitante disser "sim" de novo na recepção.
+  - **Cadastrar como membro** abre a ficha nova com o nome, o celular e a congregação do visitante.
 - **Observação de segurança:** campo opcional do registro para anotar alguém que chamou a atenção. Só o pastor e o administrador veem. Não se pede foto nem documento: nome, celular e horário já ficam registrados, com quem registrou.
-- **Permissão:** módulo **Visitantes** no Controle de Acesso (Visualizar = visitantes de hoje; Editar = registrar e corrigir, pelo menu **Registrar visitante**; Emitir = relatórios, na próxima etapa). Pastor e secretário começam com Visualizar e Editar e ficam na própria congregação.
-- **LGPD:** quem passa 2 anos sem voltar tem o nome, o celular e o bairro apagados automaticamente. As visitas continuam contando nos totais.
+- **Permissão:** módulo **Visitantes** no Controle de Acesso (Visualizar = visitantes de hoje e a lista do acompanhamento, com os celulares; Editar = registrar e corrigir, pelo menu **Registrar visitante**, e registrar o acompanhamento; Emitir = relatórios, na próxima etapa). Pastor e secretário começam com Visualizar e Editar e ficam na própria congregação.
+- **LGPD:** quem passa 2 anos sem voltar tem o nome, o celular, o bairro e as anotações apagados automaticamente. As visitas continuam contando nos totais.
 
 | Registrar visitante (celular do porteiro) | Visitantes de hoje (pastor) |
 |---|---|
 | ![Registrar visitante](docs/telas/54-recepcao-visitantes.jpg) | ![Visitantes de hoje](docs/telas/55-admin-visitantes-hoje.jpg) |
+
+![Acompanhamento de visitantes](docs/telas/56-admin-visitantes-acompanhamento.jpg)
 
 ### Pastores, congregações e agenda
 
