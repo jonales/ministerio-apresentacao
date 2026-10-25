@@ -174,7 +174,7 @@ Registro simples de quem visita a igreja, para apresentar no culto e, mais adian
 
 #### Pastores
 
-Cadastro vinculado a um membro. Cada pastor tem foto, cargo, congregação, biografia curta e completa, redes sociais e ordem de exibição no site. A opção **Pastor do Ministério** coloca o pastor no bloco da página inicial.
+Cadastro vinculado a um membro, escolhido por nome ou CPF: nome, WhatsApp e congregação vêm do cadastro do membro, e só a foto do site é própria. O pastor pode ter **mais de uma congregação**. A opção **Pastor do Ministério** vale para todas as congregações e coloca o pastor no bloco da página inicial (ex.: "Ministério e Sede"). Cada pastor tem ainda cargo, biografia curta e completa, redes sociais e ordem de exibição no site.
 
 | Lista | Edição |
 |---|---|
@@ -182,11 +182,15 @@ Cadastro vinculado a um membro. Cada pastor tem foto, cargo, congregação, biog
 
 #### Congregações e eventos
 
-Congregações com endereço e coordenadas para o mapa. Eventos com banner, tipo e congregação, e opção de destaque no site. O banner aceita JPG, PNG ou WebP de até 15 MB; um arquivo maior é recusado com aviso já na escolha.
+Congregações com endereço, coordenadas para o mapa e a **cor no calendário**. Eventos com banner, tipo e congregação, e opção de destaque no site. O banner aceita JPG, PNG ou WebP de até 15 MB; um arquivo maior é recusado com aviso já na escolha.
 
 | Congregações | Eventos |
 |---|---|
 | ![Congregações](docs/telas/17-admin-congregacoes.jpg) | ![Eventos](docs/telas/18-admin-eventos.jpg) |
+
+#### Calendário do Ministério
+
+Compromissos de cada congregação e os gerais do Ministério, num calendário mensal. Clicar num dia cadastra; clicar num compromisso altera. Pastor e secretário cadastram só os da própria congregação; os gerais ficam com quem vê todas as congregações. Os eventos do site entram no calendário sozinhos. O mesmo calendário aparece no site, com a legenda de cores (clicar filtra por congregação) e os detalhes ao clicar no compromisso.
 
 #### Cultos
 
@@ -354,6 +358,8 @@ Matriz de permissões por perfil: visualizar, editar e emitir em cada módulo. I
 #### Log de emissões e auditorias
 
 Registro de cada documento emitido, das tentativas de login e das alterações críticas, com filtros.
+
+Na **Auditoria de Autenticação** aparece a origem de cada IP (Brasil ou exterior) e os IPs com mais falhas. O login e as áreas restritas só aceitam acessos do Brasil; o site continua aberto a qualquer país. Um IP ou faixa pode ser **bloqueado** (ex.: quem tenta vários e-mails) ou **liberado** (ex.: membro viajando) na mesma tela.
 
 | Log de emissões | Autenticação | Auditoria geral |
 |---|---|---|
