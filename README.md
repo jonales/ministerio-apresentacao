@@ -254,7 +254,10 @@ O menu **Documentos** é a **pesquisa** de tudo que foi emitido: por membro, CPF
 
 #### Cartas de mudança e recomendação
 
-Cada carta é registrada com destino, cidade, data e, na recomendação, validade (30 dias por padrão). O texto sai desse registro, com a função do membro, e a carta é numerada.
+Cada carta é registrada com destino, cidade, data e, na recomendação, validade (30 dias por padrão), numa tela própria no estilo do ofício (**Nova carta** ou o lápis da lista).
+
+- **Texto editável:** o texto é montado pelo modelo (com a função do membro) e pode ser corrigido à mão antes de emitir. Enquanto não é mexido, acompanha os dados da carta (tipo, destino, cidade, validade); "Refazer o texto pelo modelo" descarta as mudanças. Linha em branco separa parágrafos e `**texto**` sai em negrito; o nome do membro já sai em negrito.
+- **Pré-visualizar:** depois de salvar, "Pré-visualizar PDF" mostra a carta como vai sair, sem assinaturas e sem QR Code (não conta como via). A emissão continua pela lista; mudar o texto de uma carta já emitida vale para a próxima via e fica na auditoria.
 
 - **Disciplina:** como atesta plena comunhão, a carta **não é emitida para membro em disciplina**.
 - **Validade:** a recomendação vencida também não é emitida.
@@ -334,7 +337,8 @@ Usuários do sistema com perfil (Administrador, Pastor, Secretário ou Membro), 
 - **E-mail:** usado em "Esqueci minha senha" e nos avisos da conta. Não pode se repetir entre usuários.
 - **Conta nova sem senha:** com o envio de e-mails ligado, a secretaria pode deixar a senha em branco e marcar "Enviar e-mail para o usuário definir a própria senha". O usuário recebe o login e um link (válido por 48 horas). Na edição, "Enviar link de nova senha" reenvia o link.
 - **Senha:** mínimo de 8 caracteres, com letras e números (vale também para Minha conta e para os links do e-mail).
-- **Vínculo com membro:** o CPF do membro é obrigatório para Membro, Pastor e Secretário e opcional para o Administrador. Com o vínculo, o usuário ganha a "Minha área" do portal.
+- **Vínculo com membro:** o CPF do membro é obrigatório para Membro, Pastor e Secretário e opcional para o Administrador. Com o vínculo, o usuário ganha a "Minha área" do portal. Todo membro cadastrado já ganha um usuário com perfil Membro: para torná-lo pastor ou secretário, edite esse usuário e troque o perfil.
+- **Congregações:** ao escolher Pastor ou Secretário aparecem a **congregação principal** (a dos documentos que ele assina) e **"Também atende"**, para marcar outras congregações. Sem "Ver todas as congregações", ele vê a principal e as marcadas.
 
 ![Usuários](docs/telas/28-admin-usuarios.jpg)
 
@@ -540,7 +544,7 @@ Qualquer perfil vinculado a um cadastro de membro também tem o portal do membro
 
 Regras para pastor e secretário:
 
-- Veem apenas a **própria congregação**: membros, documentos, carteirinhas, apresentações, pastores, cultos, eventos, relatórios e log de emissões.
+- Veem apenas as **próprias congregações** (a principal e as marcadas em "Também atende" no usuário): membros, documentos, carteirinhas, apresentações, pastores, cultos, eventos, relatórios e log de emissões.
 - Com a permissão **"Ver todas as congregações"**, veem todas.
 - Emitem carteirinhas somente para membros da própria congregação, e só se tiverem a permissão de *Emitir*.
 - Para que o filtro por congregação funcione, os usuários com esses perfis precisam ter a congregação vinculada no cadastro.
