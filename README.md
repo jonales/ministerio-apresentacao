@@ -95,8 +95,9 @@ O site se adapta a telas pequenas. O botão **Área Restrita** leva ao login.
 
 **App no celular:** o sistema pode ser instalado como aplicativo, no Android e no iPhone, e o ícone abre direto no login (se a pessoa já estiver logada, vai para a área dela).
 
-- **Android (Chrome):** na tela de login aparece **Instalar o app**; ou menu ⋮ > **Instalar app**.
-- **iPhone (Safari):** botão **Compartilhar** > **Adicionar à Tela de Início** (a tela de login mostra esse passo a passo).
+- **Android (Chrome):** no topo do site e na tela de login aparece **Instalar app**; ou menu ⋮ > **Instalar app**.
+- **iPhone (Safari):** botão **Compartilhar** > **Adicionar à Tela de Início**. O **Instalar app** do site e a tela de login mostram esse passo a passo.
+- Quem instalou antes de existir o ícone do ministério deve remover o atalho e instalar de novo.
 - Sem internet, o app mostra um aviso de "Sem conexão" em vez de uma página de erro. Nenhum dado fica guardado no aparelho.
 
 | Celular | Login |
@@ -488,6 +489,12 @@ Os três primeiros têm uma chave **liga/desliga** e começam **desligados**.
   - O link vale uma vez, e o banco guarda só o hash do token.
   - Ao trocar a senha, os outros links pendentes deixam de valer e o usuário recebe o aviso "sua senha foi alterada".
   - Sem servidor de e-mail ligado, a tela orienta procurar a secretaria.
+- **Verificação em duas etapas:** em Minha conta, "Ativar verificação em duas etapas" mostra um QR Code para o aplicativo autenticador do celular (Google Authenticator, Microsoft Authenticator ou Authy). Depois disso, o login pede a senha e o código de 6 dígitos do aplicativo.
+  - Na ativação aparecem 10 **códigos de recuperação**, uma única vez: cada um entra uma vez se a pessoa ficar sem o celular. Em Minha conta dá para gerar códigos novos ou desativar, informando um código.
+  - Na tela do código: **Lembrar este dispositivo por 30 dias** (não pede o código nesse computador ou celular) e **Receber um código por e-mail** (vale 10 minutos).
+  - Cinco códigos errados seguidos voltam para a senha. Trocar a senha faz todos os aparelhos lembrados pedirem o código de novo.
+  - **Obrigatória para administrador, pastor e secretário** a partir da data definida no servidor: até lá o painel mostra um aviso; depois, quem não ativou só volta a usar o painel depois de ativar. Recepção e membros podem ativar, sem obrigação.
+  - Quem perdeu o celular e os códigos: o administrador usa **Desativar 2 etapas** no cadastro do usuário (tela Usuários, coluna "2 etapas"), e a pessoa ativa de novo.
 
 ![Minha conta](docs/telas/38-minha-conta.jpg)
 
