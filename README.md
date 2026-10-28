@@ -93,6 +93,12 @@ Ofícios e carteirinhas trazem um QR Code que abre a conferência pública do do
 
 O site se adapta a telas pequenas. O botão **Área Restrita** leva ao login.
 
+**App no celular:** o sistema pode ser instalado como aplicativo, no Android e no iPhone, e o ícone abre direto no login (se a pessoa já estiver logada, vai para a área dela).
+
+- **Android (Chrome):** na tela de login aparece **Instalar o app**; ou menu ⋮ > **Instalar app**.
+- **iPhone (Safari):** botão **Compartilhar** > **Adicionar à Tela de Início** (a tela de login mostra esse passo a passo).
+- Sem internet, o app mostra um aviso de "Sem conexão" em vez de uma página de erro. Nenhum dado fica guardado no aparelho.
+
 | Celular | Login |
 |---|---|
 | ![Site no celular](docs/telas/09-site-celular.jpg) | ![Login](docs/telas/08-login.jpg) |
@@ -314,7 +320,11 @@ A apresentação é o registro oficial, e **é o único lugar onde o certificado
 
 #### Relatórios
 
-Relatórios de membros em PDF, geral ou por congregação.
+Relatórios em PDF, nas cores do sistema, sempre só com as congregações que o usuário pode ver:
+
+- **Membros**: todos, ativos ou de uma congregação (nº da ficha, nome, CPF, tipo, congregação e celular).
+- **Aniversariantes do mês**: escolhe o mês; sai em ordem de dia, com a idade que a pessoa completa.
+- **Usuários do sistema**: login, perfil, e-mail, congregações, se está ligado a um membro e se está ativo. Aparece para quem tem acesso a Usuários; senhas nunca aparecem, e o administrador só aparece para outro administrador.
 
 ![Relatórios](docs/telas/25-admin-relatorios.jpg)
 
