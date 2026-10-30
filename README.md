@@ -19,6 +19,7 @@ Sistema da **Assembleia de Deus Missão de Águas Lindas de Goiás (ADEALGO)**, 
   - [Administração e auditoria](#administração-e-auditoria)
 - [Portal do membro](#portal-do-membro)
 - [Perfis e permissões](#perfis-e-permissões)
+- [Arquitetura](#arquitetura)
 - [Identidade visual](#identidade-visual)
 - [Tecnologias](#tecnologias)
 
@@ -95,14 +96,16 @@ O site se adapta a telas pequenas. O botão **Área Restrita** leva ao login.
 
 **App no celular:** o sistema pode ser instalado como aplicativo, no Android e no iPhone, e o ícone abre direto no login (se a pessoa já estiver logada, vai para a área dela).
 
-- **Android (Chrome):** no topo do site e na tela de login aparece **Instalar app**; ou menu ⋮ > **Instalar app**.
-- **iPhone (Safari):** botão **Compartilhar** > **Adicionar à Tela de Início**. O **Instalar app** do site e a tela de login mostram esse passo a passo.
+- **Android (Chrome):** na tela de login aparece **Instalar o app**; ou menu ⋮ > **Instalar app**. O site não mostra o botão, para não tirar a atenção da página inicial.
+- **iPhone (Safari):** botão **Compartilhar** > **Adicionar à Tela de Início**. A tela de login mostra esse passo a passo.
 - Quem instalou antes de existir o ícone do ministério deve remover o atalho e instalar de novo.
 - Sem internet, o app mostra um aviso de "Sem conexão" em vez de uma página de erro. Nenhum dado fica guardado no aparelho.
 
 | Celular | Login |
 |---|---|
 | ![Site no celular](docs/telas/09-site-celular.jpg) | ![Login](docs/telas/08-login.jpg) |
+
+**Privacidade e cookies:** o rodapé leva à página pública **Privacidade e cookies** (`/privacidade.xhtml`), com o termo em vigor, o encarregado e a lista de cookies. O site usa só cookies necessários (sessão de acesso e, se a pessoa marcar, "lembrar este dispositivo" da verificação em duas etapas); um aviso no rodapé da tela explica isso até a pessoa clicar em **Entendi**.
 
 ---
 
@@ -119,6 +122,18 @@ O menu lateral é organizado em grupos: Pessoas, Igreja e Agenda, Documentos e R
 Busca por nome, CPF e congregação. Pela lista se acessa a ficha, as consagrações, as movimentações, as disciplinas e a carteirinha de cada membro.
 
 ![Lista de membros](docs/telas/11-admin-membros.jpg)
+
+#### Importar planilha
+
+**Pessoas › Importar planilha** (permissão *Editar* em Membros) cadastra vários membros de uma vez:
+
+1. **Baixar modelo (CSV)** e preencher uma linha por membro no Excel ou no Google Planilhas. Obrigatórias: `cpf`, `nome`, `nascimento`, `estado_civil` e `congregacao` (nome ou número). Opcionais: `sexo`, `celular`, `email`, `endereco`, `cidade`, `uf`, `cep`, `pai`, `mae`, `ficha`.
+2. **Conferir planilha:** o sistema mostra cada linha como *Pronto* ou *Erro*, com o que corrigir (CPF inválido ou já cadastrado, data impossível, congregação de fora etc.). Nada é gravado nessa etapa.
+3. **Cadastrar:** entram só as linhas sem erro, pelo mesmo cadastro da tela (histórico de congregação, acesso ao portal e e-mail de boas-vindas). Membro já cadastrado não é alterado.
+
+Aceita `;` ou `,` como separador e arquivos salvos pelo Excel (Windows-1252) ou em UTF-8. Até 2.000 membros por arquivo.
+
+**Nomes padronizados:** nome do membro, da filiação, dos pais nas apresentações e dos visitantes são gravados com a inicial maiúscula e as partículas minúsculas ("MARIA DAS DORES" vira "Maria das Dores"), digitados na tela ou vindos da planilha.
 
 #### Ficha do membro
 
@@ -225,6 +240,8 @@ As fotos enviadas são convertidas para JPEG e reduzidas automaticamente, para o
 #### Carteirinhas
 
 Carteirinhas do Ministério e da Convenção, impressas em PDF e exibidas como carteirinha digital no portal do membro.
+
+- **Layout (2026-10-29):** frente com logos, título, foto, nome em destaque e, em grade, cargo, congregação, ficha, número e emissão; verso com o texto legal, a validade em destaque, os dados pessoais e os registros CGADB e CONFRAMADEGO agrupados, o QR Code com o número e a assinatura. A faixa verde e amarela fica no topo e no canto, sem cruzar os dados. Os modelos `.jrxml` são gerados por `ferramentas/gerar_carteirinhas.py`.
 
 - **Validade de 1 ano a partir da emissão.** Cada carteirinha recebe um número (`MN-2026-000012` no Ministério, `CV-...` na Convenção) e um código aleatório para o QR Code. Reimprimir o PDF mantém o número e o QR da carteirinha válida. Se ela estiver vencida, uma nova é emitida.
 - **QR Code de conferência** no verso: o endereço curto `/v/código` abre a página pública `validar.xhtml`, que mostra só a situação, o nome, a função, a congregação, o número e a validade. O CPF não aparece nem no QR nem nessa página, e a página não é indexada por buscadores.
@@ -343,7 +360,9 @@ Modelos JasperReports com versão, situação e o perfil que pode emitir cada um
 
 #### Usuários
 
-Usuários do sistema com perfil (Administrador, Pastor, Secretário ou Membro), e-mail, congregação e situação.
+Usuários do sistema com perfil (Administrador, Pastor, Secretário, Recepção ou Membro), e-mail, congregação e situação.
+
+- **Hierarquia:** só o administrador vê, edita, exclui ou manda link de senha para outro administrador, e só ele dá esse perfil. Os demais só dão perfis até o próprio (o secretário cria secretário, recepção e membro; o pastor, até pastor), só veem e editam usuários das próprias congregações e não mudam o próprio perfil nem as próprias congregações. Tentativa negada fica na Auditoria geral. "Novo usuário" começa como Membro.
 
 - **E-mail:** usado em "Esqueci minha senha" e nos avisos da conta. Não pode se repetir entre usuários.
 - **Conta nova sem senha:** com o envio de e-mails ligado, a secretaria pode deixar a senha em branco e marcar "Enviar e-mail para o usuário definir a própria senha". O usuário recebe o login e um link (válido por 48 horas). Na edição, "Enviar link de nova senha" reenvia o link.
@@ -554,7 +573,7 @@ Cada membro só consegue baixar os próprios documentos.
 | **Administrador** | Todo o painel. Somente ele acessa controle de acesso, auditorias e modelos de documento. |
 | **Pastor** | Painel conforme a matriz de **Controle de Acesso**. |
 | **Secretário** | Painel conforme a matriz de **Controle de Acesso**. |
-| **Recepção** | Porteiro: só a página **Registrar visitante**, da própria congregação. |
+| **Recepção** | Porteiro: só a página **Registrar visitante**, da própria congregação. O acesso vem da permissão *Editar* em Visitantes (Controle de Acesso > Recepção), e não do perfil em si. |
 | **Membro** | Somente o portal do membro. |
 
 Qualquer perfil vinculado a um cadastro de membro também tem o portal do membro para os próprios dados (seção **Minha área**).
@@ -562,9 +581,26 @@ Qualquer perfil vinculado a um cadastro de membro também tem o portal do membro
 Regras para pastor e secretário:
 
 - Veem apenas as **próprias congregações** (a principal e as marcadas em "Também atende" no usuário): membros, documentos, carteirinhas, apresentações, pastores, cultos, eventos, relatórios e log de emissões.
-- Com a permissão **"Ver todas as congregações"**, veem todas.
+- Com a permissão **"Ver todas as congregações"**, **veem** todas, mas **cadastram, alteram, excluem e emitem** só nas próprias. As listas de escolha de congregação nos cadastros mostram só as próprias. Compromissos e eventos gerais do Ministério, e criar ou excluir congregações, ficam com o administrador.
+- Registrar visitantes na porta depende da permissão *Editar* em Visitantes, para qualquer perfil.
 - Emitem carteirinhas somente para membros da própria congregação, e só se tiverem a permissão de *Emitir*.
 - Para que o filtro por congregação funcione, os usuários com esses perfis precisam ter a congregação vinculada no cadastro.
+
+---
+
+## Arquitetura
+
+Uma aplicação Spring Boot (JSF + PrimeFaces) empacotada como WAR e servida pelo Tomcat atrás do Traefik. Os diagramas abaixo são SVG sem dependências externas, em `docs/arquitetura/`.
+
+![Arquitetura](docs/arquitetura/camadas.svg)
+
+Toda requisição passa pelas mesmas portas, nesta ordem. A quinta separa o que se **lê** do que se **altera**:
+
+![Fluxo de permissões](docs/arquitetura/permissoes.svg)
+
+![Casos de uso por perfil](docs/arquitetura/casos-de-uso.svg)
+
+Onde fica cada parte: telas em `src/main/webapp` (um menu lateral único em `WEB-INF/includes/menu-lateral.xhtml`), beans em `view/<domínio>`, regras em `service/`, filtros em `security/`, migrações em `src/main/resources/db/migration` e `src/main/java/db/migration`. As decisões e armadilhas ficam nas notas de `src/docs/memorys ia/`.
 
 ---
 
