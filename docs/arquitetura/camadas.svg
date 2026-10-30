@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Arquitetura do sistema ADEALGO</title>
+  <desc id="d">Navegador e app no celular passam pelo Traefik até o Tomcat. Dentro da aplicação: filtros de segurança, telas JSF, serviços, repositórios JPA e o banco MySQL com Flyway. Ao lado: PDFs com JasperReports, e-mail, Google e Apple Wallet e conferência por QR Code.</desc>
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4e2928"/>
+    </marker>
+  </defs>
+  <rect width="960" height="600" fill="#ffffff"/>
+  <rect x="0" y="0" width="960" height="6" fill="#008000"/>
+  <rect x="0" y="6" width="960" height="4" fill="#ffd700"/>
+
+  <text x="32" y="48" font-size="22" font-weight="700" fill="#351c1c">Arquitetura</text>
+  <text x="32" y="72" font-size="14" fill="#6b5a59">Uma aplicação Spring Boot (WAR no Tomcat 10.1), atrás do Traefik no Docker Swarm</text>
+
+  <!-- clientes -->
+  <g font-size="14">
+    <rect x="32" y="100" width="200" height="56" rx="10" fill="#f6f1f0" stroke="#955251"/>
+    <text x="132" y="124" text-anchor="middle" font-weight="600" fill="#351c1c">Navegador</text>
+    <text x="132" y="143" text-anchor="middle" font-size="12" fill="#6b5a59">site, painel, portal, recepção</text>
+    <rect x="252" y="100" width="200" height="56" rx="10" fill="#f6f1f0" stroke="#955251"/>
+    <text x="352" y="124" text-anchor="middle" font-weight="600" fill="#351c1c">App no celular (PWA)</text>
+    <text x="352" y="143" text-anchor="middle" font-size="12" fill="#6b5a59">abre direto no login</text>
+    <rect x="472" y="100" width="200" height="56" rx="10" fill="#f6f1f0" stroke="#955251"/>
+    <text x="572" y="124" text-anchor="middle" font-weight="600" fill="#351c1c">QR Code impresso</text>
+    <text x="572" y="143" text-anchor="middle" font-size="12" fill="#6b5a59">/v/CÓDIGO (conferência pública)</text>
+  </g>
+  <path d="M352 156 V180" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <rect x="32" y="182" width="640" height="34" rx="8" fill="#ffffff" stroke="#b9a3a1" stroke-dasharray="4 3"/>
+  <text x="352" y="204" text-anchor="middle" font-size="13" fill="#351c1c"><tspan font-weight="600">Traefik</tspan> · HTTPS · encaminha para o Tomcat</text>
+  <path d="M352 216 V240" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+
+  <!-- aplicação -->
+  <rect x="32" y="242" width="640" height="326" rx="12" fill="#faf3f2" stroke="#955251" stroke-width="1.5"/>
+  <text x="52" y="266" font-size="13" font-weight="700" fill="#955251" letter-spacing=".06em">APLICAÇÃO (ROOT.war)</text>
+
+  <g font-size="13">
+    <rect x="52" y="278" width="600" height="58" rx="8" fill="#351c1c"/>
+    <text x="68" y="300" font-weight="700" fill="#d9b77e">Spring Security · filtros</text>
+    <text x="68" y="322" fill="#ffffff" font-size="12">BloqueioIpFilter (só Brasil) → login e 2 etapas → PermissaoAuthorizationFilter → ConsentimentoLgpdFilter</text>
+
+    <rect x="52" y="348" width="600" height="50" rx="8" fill="#ffffff" stroke="#955251"/>
+    <text x="68" y="369" font-weight="700" fill="#351c1c">Telas JSF + PrimeFaces 16</text>
+    <text x="68" y="388" fill="#6b5a59" font-size="12">view/&lt;domínio&gt;/*Bean · um menu lateral único (menu-lateral.xhtml) montado pelas permissões</text>
+
+    <rect x="52" y="410" width="600" height="58" rx="8" fill="#ffffff" stroke="#955251"/>
+    <text x="68" y="431" font-weight="700" fill="#351c1c">Serviços (regras de negócio)</text>
+    <text x="68" y="450" fill="#6b5a59" font-size="12">EscopoCongregacaoService (ler × alterar) · HierarquiaUsuarioService · PermissaoRoleService</text>
+    <text x="68" y="464" fill="#6b5a59" font-size="12">membros, documentos, carteirinhas, visitantes, ofícios, LGPD, importação por planilha</text>
+
+    <rect x="52" y="480" width="290" height="70" rx="8" fill="#ffffff" stroke="#955251"/>
+    <text x="68" y="502" font-weight="700" fill="#351c1c">Repositórios JPA</text>
+    <text x="68" y="521" fill="#6b5a59" font-size="12">Hibernate 6.6 · projeções sem</text>
+    <text x="68" y="537" fill="#6b5a59" font-size="12">as fotos nas listas</text>
+
+    <rect x="362" y="480" width="290" height="70" rx="8" fill="#e8f3ec" stroke="#2e7d4f"/>
+    <text x="378" y="502" font-weight="700" fill="#1f5c39">MySQL / Percona 8</text>
+    <text x="378" y="521" fill="#2e5a42" font-size="12">Flyway V1–V33 (SQL e Java)</text>
+    <text x="378" y="537" fill="#2e5a42" font-size="12">permissoes_role, auditoria, LGPD</text>
+  </g>
+  <path d="M352 336 V346" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <path d="M352 398 V408" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <path d="M197 468 V478" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <path d="M342 515 H360" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+
+  <!-- integrações -->
+  <text x="712" y="266" font-size="13" font-weight="700" fill="#955251" letter-spacing=".06em">SAÍDAS E INTEGRAÇÕES</text>
+  <g font-size="13">
+    <rect x="712" y="278" width="216" height="58" rx="8" fill="#ffffff" stroke="#b7791f"/>
+    <text x="728" y="300" font-weight="700" fill="#351c1c">PDF · JasperReports</text>
+    <text x="728" y="320" fill="#6b5a59" font-size="12">carteirinhas, certificados, cartas</text>
+    <rect x="712" y="348" width="216" height="50" rx="8" fill="#ffffff" stroke="#b7791f"/>
+    <text x="728" y="369" font-weight="700" fill="#351c1c">E-mail (SMTP)</text>
+    <text x="728" y="388" fill="#6b5a59" font-size="12">fila, senha, comunicados</text>
+    <rect x="712" y="410" width="216" height="58" rx="8" fill="#ffffff" stroke="#b7791f"/>
+    <text x="728" y="431" font-weight="700" fill="#351c1c">Google e Apple Wallet</text>
+    <text x="728" y="450" fill="#6b5a59" font-size="12">carteirinha no celular</text>
+    <rect x="712" y="480" width="216" height="70" rx="8" fill="#ffffff" stroke="#b7791f"/>
+    <text x="728" y="502" font-weight="700" fill="#351c1c">Conferência pública</text>
+    <text x="728" y="521" fill="#6b5a59" font-size="12">QR Code (ZXing) → /v/CÓDIGO,</text>
+    <text x="728" y="537" fill="#6b5a59" font-size="12">sem CPF, noindex</text>
+  </g>
+  <path d="M652 439 H708" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <!-- QR impresso vai direto à conferência pública (pela margem, sem cruzar as caixas) -->
+  <path d="M672 128 H944 V515 H932" fill="none" stroke="#b9a3a1" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#seta)"/>
+</svg>

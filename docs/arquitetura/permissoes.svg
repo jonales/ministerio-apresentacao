@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Fluxo de permissões</title>
+  <desc id="d">Uma requisição passa por cinco portas: país do IP, login, perfil da área, permissão do recurso e escopo de congregação. Para ler vale a marca Ver todas as congregações; para alterar, só as próprias congregações. Em Usuários vale ainda a hierarquia de perfis.</desc>
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4e2928"/>
+    </marker>
+  </defs>
+  <rect width="960" height="560" fill="#ffffff"/>
+  <rect x="0" y="0" width="960" height="6" fill="#008000"/>
+  <rect x="0" y="6" width="960" height="4" fill="#ffd700"/>
+  <text x="32" y="48" font-size="22" font-weight="700" fill="#351c1c">Fluxo de permissões</text>
+  <text x="32" y="72" font-size="14" fill="#6b5a59">Cada pedido passa pelas portas na ordem; a primeira que recusa encerra (403 ou volta ao login)</text>
+
+  <g font-size="13">
+    <!-- portas -->
+    <rect x="32" y="104" width="160" height="96" rx="10" fill="#351c1c"/>
+    <text x="112" y="130" text-anchor="middle" font-weight="700" fill="#d9b77e">1 · País do IP</text>
+    <text x="112" y="152" text-anchor="middle" fill="#fff" font-size="12">login e áreas restritas</text>
+    <text x="112" y="168" text-anchor="middle" fill="#fff" font-size="12">só do Brasil (LACNIC)</text>
+    <text x="112" y="186" text-anchor="middle" fill="#d9b77e" font-size="11">BloqueioIpFilter</text>
+
+    <rect x="216" y="104" width="160" height="96" rx="10" fill="#351c1c"/>
+    <text x="296" y="130" text-anchor="middle" font-weight="700" fill="#d9b77e">2 · Login</text>
+    <text x="296" y="152" text-anchor="middle" fill="#fff" font-size="12">senha + verificação em</text>
+    <text x="296" y="168" text-anchor="middle" fill="#fff" font-size="12">2 etapas (admin, pastor, sec.)</text>
+    <text x="296" y="186" text-anchor="middle" fill="#d9b77e" font-size="11">LoginBean · DoisFatores</text>
+
+    <rect x="400" y="104" width="160" height="96" rx="10" fill="#351c1c"/>
+    <text x="480" y="130" text-anchor="middle" font-weight="700" fill="#d9b77e">3 · Área do perfil</text>
+    <text x="480" y="152" text-anchor="middle" fill="#fff" font-size="12">/admin · /membro</text>
+    <text x="480" y="168" text-anchor="middle" fill="#fff" font-size="12">/recepcao · /conta</text>
+    <text x="480" y="186" text-anchor="middle" fill="#d9b77e" font-size="11">SecurityConfig</text>
+
+    <rect x="584" y="104" width="160" height="96" rx="10" fill="#351c1c"/>
+    <text x="664" y="130" text-anchor="middle" font-weight="700" fill="#d9b77e">4 · Recurso</text>
+    <text x="664" y="152" text-anchor="middle" fill="#fff" font-size="12">visualizar / editar / emitir</text>
+    <text x="664" y="168" text-anchor="middle" fill="#fff" font-size="12">no Controle de Acesso</text>
+    <text x="664" y="186" text-anchor="middle" fill="#d9b77e" font-size="11">PermissaoAuthorizationFilter</text>
+
+    <rect x="768" y="104" width="160" height="96" rx="10" fill="#955251"/>
+    <text x="848" y="130" text-anchor="middle" font-weight="700" fill="#fff">5 · Congregação</text>
+    <text x="848" y="152" text-anchor="middle" fill="#fff" font-size="12">o que pode ver e</text>
+    <text x="848" y="168" text-anchor="middle" fill="#fff" font-size="12">o que pode alterar</text>
+    <text x="848" y="186" text-anchor="middle" fill="#f3e3e1" font-size="11">EscopoCongregacaoService</text>
+  </g>
+  <path d="M192 152 H212" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <path d="M376 152 H396" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <path d="M560 152 H580" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <path d="M744 152 H764" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+
+  <!-- detalhe do escopo -->
+  <path d="M848 200 V226 H480 V244" fill="none" stroke="#4e2928" stroke-width="1.5" marker-end="url(#seta)"/>
+  <rect x="32" y="248" width="430" height="168" rx="12" fill="#f6f1f0" stroke="#955251"/>
+  <text x="52" y="276" font-size="15" font-weight="700" fill="#351c1c">Ler (listas, ficha, foto, prévia, reimpressão)</text>
+  <g font-size="13" fill="#2b2322">
+    <text x="52" y="304">• Admin: todas as congregações</text>
+    <text x="52" y="328">• Pastor/secretário com <tspan font-weight="600">"Ver todas as congregações"</tspan>: todas</text>
+    <text x="52" y="352">• Sem a marca: a congregação principal e as de</text>
+    <text x="64" y="370">"Também atende" no usuário</text>
+    <text x="52" y="396" fill="#6b5a59" font-size="12">congregacaoIdsFiltro() · podeAcessar()</text>
+  </g>
+  <rect x="498" y="248" width="430" height="168" rx="12" fill="#faf3f2" stroke="#955251" stroke-width="2"/>
+  <text x="518" y="276" font-size="15" font-weight="700" fill="#351c1c">Alterar (cadastrar, excluir, emitir, cancelar)</text>
+  <g font-size="13" fill="#2b2322">
+    <text x="518" y="304">• Admin: todas as congregações</text>
+    <text x="518" y="328">• Demais: <tspan font-weight="600">só as próprias</tspan>, mesmo com "Ver todas"</text>
+    <text x="518" y="352">• Listas de escolha de congregação mostram só elas</text>
+    <text x="518" y="376">• Conferido de novo no serviço, não só na tela</text>
+    <text x="518" y="396" fill="#6b5a59" font-size="12">podeAlterar() · verificarAlteracao() · filtrarCongregacoesEdicao()</text>
+  </g>
+
+  <!-- usuários -->
+  <rect x="32" y="440" width="896" height="96" rx="12" fill="#ffffff" stroke="#b7791f" stroke-width="1.5"/>
+  <text x="52" y="468" font-size="15" font-weight="700" fill="#351c1c">Usuários: hierarquia de perfis</text>
+  <text x="300" y="468" font-size="13" fill="#6b5a59">admin › pastor › secretário › recepção › membro</text>
+  <g font-size="13" fill="#2b2322">
+    <text x="52" y="494">• Só o admin vê, edita, exclui ou manda link de senha para um admin, e só ele dá o perfil admin</text>
+    <text x="52" y="516">• Ninguém dá perfil acima do próprio, muda o próprio perfil/congregações ou se exclui · tentativa negada vai para a auditoria</text>
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Casos de uso por perfil</title>
+  <desc id="d">O que cada perfil faz no sistema: visitante do site, membro, recepção, secretário, pastor e administrador.</desc>
+  <rect width="960" height="520" fill="#ffffff"/>
+  <rect x="0" y="0" width="960" height="6" fill="#008000"/>
+  <rect x="0" y="6" width="960" height="4" fill="#ffd700"/>
+  <text x="32" y="48" font-size="22" font-weight="700" fill="#351c1c">Casos de uso por perfil</text>
+  <text x="32" y="72" font-size="14" fill="#6b5a59">Pastor e secretário dependem da matriz do Controle de Acesso; o que está abaixo é o uso típico</text>
+
+  <g font-size="13">
+    <!-- coluna -->
+    <rect x="32" y="96" width="140" height="44" rx="8" fill="#f6f1f0" stroke="#955251"/>
+    <text x="102" y="123" text-anchor="middle" font-weight="700" fill="#351c1c">Visitante do site</text>
+    <g fill="#2b2322" font-size="12.5">
+      <text x="36" y="166">• Ver cultos, eventos</text>
+      <text x="44" y="184">e congregações</text>
+      <text x="36" y="206">• Conferir documento</text>
+      <text x="44" y="224">pelo QR Code</text>
+      <text x="36" y="246">• Ler a política de</text>
+      <text x="44" y="264">privacidade e cookies</text>
+      <text x="36" y="286">• Instalar o app</text>
+      <text x="44" y="304">(tela de login)</text>
+    </g>
+
+    <rect x="184" y="96" width="140" height="44" rx="8" fill="#f6f1f0" stroke="#955251"/>
+    <text x="254" y="123" text-anchor="middle" font-weight="700" fill="#351c1c">Membro</text>
+    <g fill="#2b2322" font-size="12.5">
+      <text x="188" y="166">• Ver e corrigir os</text>
+      <text x="196" y="184">próprios dados</text>
+      <text x="188" y="206">• Carteirinha digital,</text>
+      <text x="196" y="224">PDF e Wallet</text>
+      <text x="188" y="246">• Baixar documentos</text>
+      <text x="188" y="268">• Termo de privacidade</text>
+      <text x="196" y="286">e pedidos LGPD</text>
+      <text x="188" y="308">• Minha conta e</text>
+      <text x="196" y="326">2 etapas</text>
+    </g>
+
+    <rect x="336" y="96" width="140" height="44" rx="8" fill="#f6f1f0" stroke="#955251"/>
+    <text x="406" y="123" text-anchor="middle" font-weight="700" fill="#351c1c">Recepção</text>
+    <g fill="#2b2322" font-size="12.5">
+      <text x="340" y="166">• Registrar visitante</text>
+      <text x="348" y="184">na porta, da própria</text>
+      <text x="348" y="202">congregação</text>
+      <text x="340" y="224">• Liberado pela</text>
+      <text x="348" y="242">permissão "editar</text>
+      <text x="348" y="260">visitantes"</text>
+    </g>
+
+    <rect x="488" y="96" width="140" height="44" rx="8" fill="#955251"/>
+    <text x="558" y="123" text-anchor="middle" font-weight="700" fill="#fff">Secretário</text>
+    <g fill="#2b2322" font-size="12.5">
+      <text x="492" y="166">• Cadastrar membros</text>
+      <text x="500" y="184">(tela ou planilha)</text>
+      <text x="492" y="206">• Emitir carteirinhas,</text>
+      <text x="500" y="224">cartas e certificados</text>
+      <text x="492" y="246">• Visitantes e</text>
+      <text x="500" y="264">acompanhamento</text>
+      <text x="492" y="286">• Relatórios</text>
+      <text x="492" y="308">• Usuários até</text>
+      <text x="500" y="326">secretário</text>
+    </g>
+
+    <rect x="640" y="96" width="140" height="44" rx="8" fill="#955251"/>
+    <text x="710" y="123" text-anchor="middle" font-weight="700" fill="#fff">Pastor</text>
+    <g fill="#2b2322" font-size="12.5">
+      <text x="644" y="166">• Tudo do secretário,</text>
+      <text x="652" y="184">conforme a matriz</text>
+      <text x="644" y="206">• Pastores, cultos,</text>
+      <text x="652" y="224">eventos, calendário</text>
+      <text x="644" y="246">• Ofícios à convenção</text>
+      <text x="644" y="268">• Usuários até pastor</text>
+    </g>
+
+    <rect x="792" y="96" width="140" height="44" rx="8" fill="#351c1c"/>
+    <text x="862" y="123" text-anchor="middle" font-weight="700" fill="#d9b77e">Administrador</text>
+    <g fill="#2b2322" font-size="12.5">
+      <text x="796" y="166">• Todo o painel, em</text>
+      <text x="804" y="184">todas as congregações</text>
+      <text x="796" y="206">• Controle de acesso</text>
+      <text x="796" y="228">• Auditorias e</text>
+      <text x="804" y="246">controle de IP</text>
+      <text x="796" y="268">• Servidor de e-mail</text>
+      <text x="796" y="290">• Congregações e</text>
+      <text x="804" y="308">modelos de documento</text>
+      <text x="796" y="330">• Usuários admin</text>
+    </g>
+  </g>
+
+  <!-- faixa comum -->
+  <rect x="32" y="368" width="900" height="124" rx="12" fill="#faf3f2" stroke="#955251"/>
+  <text x="52" y="396" font-size="15" font-weight="700" fill="#351c1c">Valem para todos os perfis do painel</text>
+  <g font-size="13" fill="#2b2322">
+    <text x="52" y="422">• Quem também é membro tem a "Minha área" no mesmo menu (um layout só para painel e portal)</text>
+    <text x="52" y="446">• O menu mostra só o que o perfil abre; o teste ferramentas/e2e/perfis-acesso.js confere cada link e cada URL restrita</text>
+    <text x="52" y="470">• Fora do admin, cadastrar, alterar e emitir ficam nas próprias congregações; "Ver todas" serve só para consultar</text>
+  </g>
+</svg>

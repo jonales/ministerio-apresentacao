@@ -19,6 +19,7 @@ Sistema da **Assembleia de Deus Missão de Águas Lindas de Goiás (ADEALGO)**, 
   - [Administração e auditoria](#administração-e-auditoria)
 - [Portal do membro](#portal-do-membro)
 - [Perfis e permissões](#perfis-e-permissões)
+- [Passo a passo com as telas](#passo-a-passo-com-as-telas)
 - [Arquitetura](#arquitetura)
 - [Identidade visual](#identidade-visual)
 - [Tecnologias](#tecnologias)
@@ -249,7 +250,7 @@ Carteirinhas do Ministério e da Convenção, impressas em PDF e exibidas como c
 - **Situação** na lista: *Válida*, *Vencida*, *Suspensa*, *Cancelada*, *Substituída por nova via* ou *Sem vínculo ativo*. Membro em disciplina aparece como suspenso; membro desligado (última movimentação é uma saída) aparece sem vínculo ativo. Isso vale também na conferência pelo QR, que não mostra o motivo.
 - **Ações da secretaria:** PDF, *Nova via* (a anterior deixa de valer), *Suspender* e *Cancelar* (com motivo) e *Reativar*. Tudo fica registrado na Auditoria. Os filtros mostram quem ainda não tem carteirinha e quais vencem em 30 dias.
 - A foto só sai na carteirinha se o membro permitir no termo de privacidade (permitido por padrão).
-- **Google Wallet:** com a conta configurada (ver [Google Wallet](#google-wallet)), o membro vê o botão **Adicionar à Google Wallet** na carteirinha válida. O cartão leva nome, função, congregação, número, validade e o mesmo QR Code de conferência, sem CPF e sem foto. Suspender, reativar, cancelar ou emitir nova via atualiza o cartão já salvo no celular. Se o Google estiver fora do ar, a ação da secretaria vale assim mesmo e a falha fica no log. A tela de carteirinhas mostra se a Google Wallet está ativa.
+- **Google Wallet:** com a conta configurada (ver [Google Wallet](#google-wallet)), o membro vê o botão **Adicionar à Google Wallet** na carteirinha válida. O cartão leva nome, função, congregação, número, validade e o mesmo QR Code de conferência, sem CPF e sem foto, e embaixo a faixa verde e amarela com os logos da CGADB e da CONFRAMADEGO e o título da carteirinha impressa (imagens em `resources/images/wallet/`, geradas por `ferramentas/gerar_faixas_wallet.py`; desenho novo pede outro `?v=` em `GoogleWalletService`, porque o Google guarda a imagem em cache). Suspender, reativar, cancelar ou emitir nova via atualiza o cartão já salvo no celular. Se o Google estiver fora do ar, a ação da secretaria vale assim mesmo e a falha fica no log. A tela de carteirinhas mostra se a Google Wallet está ativa.
 - **Apple Wallet:** com o certificado configurado (ver [Apple Wallet](#apple-wallet)), o membro baixa o cartão (`.pkpass`) pelo botão **Adicionar à Apple Wallet**. O cartão traz os mesmos dados e o QR Code de conferência, mais a foto se o membro permitir. Suspender, reativar, cancelar ou emitir nova via avisa o iPhone por push, e ele baixa a versão nova sozinho. Suspensa aparece em cinza; cancelada ou substituída fica anulada na Wallet.
 - O QR Code aponta para o **endereço do sistema**, definido na instalação (ver [Endereço do sistema](#endereço-do-sistema)).
 
@@ -587,6 +588,10 @@ Regras para pastor e secretário:
 - Para que o filtro por congregação funcione, os usuários com esses perfis precisam ter a congregação vinculada no cadastro.
 
 ---
+
+## Passo a passo com as telas
+
+O [roteiro do vídeo](docs/roteiro-video/README.md) mostra, em 50 passos, como usar cada função: entrar, cadastrar congregação, membro, consagração, movimentação, pastor, usuário, evento, cultos, calendário, apresentação, carta e ofício, registrar visitante na recepção e usar o portal do membro. Cada passo tem o print no computador e no celular e o texto para a narração. Os prints vêm de uma simulação real do uso do sistema com dados de teste, e os CPFs aparecem cobertos.
 
 ## Arquitetura
 
