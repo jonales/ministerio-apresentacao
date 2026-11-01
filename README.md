@@ -115,7 +115,19 @@ O site se adapta a telas pequenas. O botão **Área Restrita** leva ao login.
 
 O menu lateral é organizado em grupos: Pessoas, Igreja e Agenda, Documentos e Relatórios, Comunicação e Administração. Cada perfil vê somente os itens a que tem permissão.
 
+O início do painel reúne:
+
+- **Avisos:** os avisos internos da congregação de quem vê (e os de todas), cadastrados em **Igreja e Agenda › Avisos do painel**, e os avisos e destaques que estão no site.
+- **Aniversariantes do mês**, separados por congregação, com o do dia marcado "Hoje" (para quem vê Membros; pastor e secretário veem só as próprias congregações).
+- **Atalhos rápidos** e o card **Contribua com o Ministério**, com a chave PIX (botão de copiar) e os dados bancários. O mesmo card aparece no início do portal do membro; o rodapé do site traz também o QR Code.
+
 ![Início do painel](docs/telas/10-admin-painel.jpg)
+
+#### Avisos do painel
+
+Recados para quem usa o sistema (secretaria, pastores, recepção): título, texto, para qual congregação (ou todas) e o período em que aparecem. Desativar tira o aviso do painel sem apagá-lo. Fora do administrador, cada um só cadastra para as próprias congregações; aviso para todas é só do administrador. Permissão **Avisos do painel** no Controle de Acesso (pastor e secretário começam com Visualizar e Editar).
+
+![Avisos do painel](docs/telas/68-admin-avisos-painel.jpg)
 
 ### Membros
 
