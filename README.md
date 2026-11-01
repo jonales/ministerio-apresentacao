@@ -6,7 +6,7 @@ Sistema da **Assembleia de Deus Missão de Águas Lindas de Goiás (ADEALGO)**, 
 - **Painel administrativo**: secretaria da igreja, com cadastro de membros, documentos, carteirinhas, relatórios e o conteúdo do site.
 - **Portal do membro**: cada membro consulta os próprios dados, carteirinhas e documentos.
 
-> As telas abaixo foram capturadas com dados de teste. Os CPFs e nomes são fictícios.
+> As telas abaixo foram capturadas em 01/11/2026, num banco só com dados de teste: nomes, CPFs e telefones são fictícios. Cada tela também aparece no celular, em [Telas no celular](#telas-no-celular).
 
 ## Sumário
 
@@ -18,6 +18,7 @@ Sistema da **Assembleia de Deus Missão de Águas Lindas de Goiás (ADEALGO)**, 
   - [Documentos, carteirinhas e relatórios](#documentos-carteirinhas-e-relatórios)
   - [Administração e auditoria](#administração-e-auditoria)
 - [Portal do membro](#portal-do-membro)
+- [Telas no celular](#telas-no-celular)
 - [Perfis e permissões](#perfis-e-permissões)
 - [Passo a passo com as telas](#passo-a-passo-com-as-telas)
 - [Arquitetura](#arquitetura)
@@ -112,7 +113,7 @@ O site se adapta a telas pequenas. O botão **Área Restrita** leva ao login.
 
 ## Painel administrativo
 
-O menu lateral é organizado em grupos: Pessoas, Igreja e Agenda, Documentos e Relatórios, e Administração. Cada perfil vê somente os itens a que tem permissão.
+O menu lateral é organizado em grupos: Pessoas, Igreja e Agenda, Documentos e Relatórios, Comunicação e Administração. Cada perfil vê somente os itens a que tem permissão.
 
 ![Início do painel](docs/telas/10-admin-painel.jpg)
 
@@ -133,6 +134,8 @@ Busca por nome, CPF e congregação. Pela lista se acessa a ficha, as consagraç
 3. **Cadastrar:** entram só as linhas sem erro, pelo mesmo cadastro da tela (histórico de congregação, acesso ao portal e e-mail de boas-vindas). Membro já cadastrado não é alterado.
 
 Aceita `;` ou `,` como separador e arquivos salvos pelo Excel (Windows-1252) ou em UTF-8. Até 2.000 membros por arquivo.
+
+![Importar planilha](docs/telas/62-admin-importar-planilha.jpg)
 
 **Nomes padronizados:** nome do membro, da filiação, dos pais nas apresentações e dos visitantes são gravados com a inicial maiúscula e as partículas minúsculas ("MARIA DAS DORES" vira "Maria das Dores"), digitados na tela ou vindos da planilha.
 
@@ -215,6 +218,10 @@ Congregações com endereço, coordenadas para o mapa e a **cor no calendário**
 
 Compromissos de cada congregação e os gerais do Ministério, num calendário mensal. Clicar num dia cadastra; clicar num compromisso altera. Pastor e secretário cadastram só os da própria congregação; os gerais ficam com quem vê todas as congregações. Os eventos do site entram no calendário sozinhos. O mesmo calendário aparece no site, com a legenda de cores (clicar filtra por congregação) e os detalhes ao clicar no compromisso.
 
+| No painel | No site |
+|---|---|
+| ![Calendário no painel](docs/telas/63-admin-calendario.jpg) | ![Calendário no site](docs/telas/61-site-calendario.jpg) |
+
 #### Cultos
 
 Agenda semanal de cultos de cada congregação.
@@ -255,7 +262,9 @@ Carteirinhas do Ministério e da Convenção, impressas em PDF e exibidas como c
 - **Apple Wallet:** com o certificado configurado (ver [Apple Wallet](#apple-wallet)), o membro baixa o cartão (`.pkpass`) pelo botão **Adicionar à Apple Wallet**. O cartão traz os mesmos dados e o QR Code de conferência, mais a foto se o membro permitir. Suspender, reativar, cancelar ou emitir nova via avisa o iPhone por push, e ele baixa a versão nova sozinho. Suspensa aparece em cinza; cancelada ou substituída fica anulada na Wallet.
 - O QR Code aponta para o **endereço do sistema**, definido na instalação (ver [Endereço do sistema](#endereço-do-sistema)).
 
-![Carteirinhas](docs/telas/22-admin-carteirinhas.jpg)
+| Carteirinhas | Assinatura das carteirinhas |
+|---|---|
+| ![Carteirinhas](docs/telas/22-admin-carteirinhas.jpg) | ![Assinatura das carteirinhas](docs/telas/64-admin-assinatura-carteirinhas.jpg) |
 
 #### Documentos
 
@@ -291,7 +300,9 @@ Cada carta é registrada com destino, cidade, data e, na recomendação, validad
 - **Layout:** igual ao da carta feita à mão. Na coluna "Pertencente à congregação" saem as congregações com o quadradinho (☒ na da carta), o nome em letras condensadas e o endereço abaixo; o texto sai com serifa, o nome do membro em negrito e, abaixo das linhas, o nome e o cargo de quem assina (também na via para assinar à mão).
 - **Congregações na carta:** em **Congregações**, cada uma tem "Nome nas cartas" (ex.: JARDIM DA B. II), "Endereço nas cartas" e "Posição" (vazio = não aparece; a congregação da carta aparece sempre). Os valores iniciais vieram da carta em uso.
 
-![Cartas](docs/telas/23b-admin-cartas.jpg)
+| Lista de cartas | Carta com o texto editável |
+|---|---|
+| ![Cartas](docs/telas/23b-admin-cartas.jpg) | ![Edição da carta](docs/telas/65-admin-carta-edicao.jpg) |
 
 ![Carta de recomendação](docs/telas/23d-carta-recomendacao.jpg)
 
@@ -517,7 +528,9 @@ Os três primeiros têm uma chave **liga/desliga** e começam **desligados**.
   - **Obrigatória para administrador, pastor e secretário** a partir da data definida no servidor: até lá o painel mostra um aviso; depois, quem não ativou só volta a usar o painel depois de ativar. Recepção e membros podem ativar, sem obrigação.
   - Quem perdeu o celular e os códigos: o administrador usa **Desativar 2 etapas** no cadastro do usuário (tela Usuários, coluna "2 etapas"), e a pessoa ativa de novo.
 
-![Minha conta](docs/telas/38-minha-conta.jpg)
+| Minha conta | Ativar a verificação em duas etapas |
+|---|---|
+| ![Minha conta](docs/telas/38-minha-conta.jpg) | ![Verificação em duas etapas](docs/telas/66-minha-conta-dois-fatores.jpg) |
 
 #### No celular
 
@@ -565,6 +578,27 @@ Na mesma página ficam o link **Baixar o comprovante do seu aceite (PDF)** e a s
 Cada membro só consegue baixar os próprios documentos.
 
 ![Meus documentos](docs/telas/37-membro-documentos.jpg)
+
+## Telas no celular
+
+O site, o painel e o portal do membro funcionam no celular (e podem ser instalados como aplicativo, ver [No celular e acesso restrito](#no-celular-e-acesso-restrito)). No painel, o menu lateral abre pelo botão do topo, os filtros ficam recolhidos e as tabelas largas rolam para o lado dentro da própria caixa. Em tela de toque, os botões de ação das tabelas têm 44 × 44 px.
+
+| | | | |
+|---|---|---|---|
+| **Site** | **Eventos no site** | **Calendário no site** | **Login** |
+| ![Site](docs/telas/celular/01-site-inicio.jpg) | ![Eventos no site](docs/telas/celular/06-site-eventos.jpg) | ![Calendário no site](docs/telas/celular/61-site-calendario.jpg) | ![Login](docs/telas/celular/08-login.jpg) |
+| **Início do painel** | **Menu do painel** | **Membros** | **Ficha do membro** |
+| ![Início do painel](docs/telas/celular/10-admin-painel.jpg) | ![Menu do painel](docs/telas/celular/10b-admin-menu.jpg) | ![Membros](docs/telas/celular/11-admin-membros.jpg) | ![Ficha do membro](docs/telas/celular/12-admin-membro-ficha.jpg) |
+| **Batismo e consagrações** | **Recepção: registrar visitante** | **Visitantes de hoje** | **Acompanhamento de visitantes** |
+| ![Batismo e consagrações](docs/telas/celular/13-admin-consagracoes.jpg) | ![Recepção: registrar visitante](docs/telas/celular/54-recepcao-visitantes.jpg) | ![Visitantes de hoje](docs/telas/celular/55-admin-visitantes-hoje.jpg) | ![Acompanhamento de visitantes](docs/telas/celular/56-admin-visitantes-acompanhamento.jpg) |
+| **Calendário do Ministério** | **Carteirinhas** | **Documentos** | **Cartas** |
+| ![Calendário do Ministério](docs/telas/celular/63-admin-calendario.jpg) | ![Carteirinhas](docs/telas/celular/22-admin-carteirinhas.jpg) | ![Documentos](docs/telas/celular/23-admin-documentos.jpg) | ![Cartas](docs/telas/celular/23b-admin-cartas.jpg) |
+| **Ofícios** | **Apresentações** | **Relatórios** | **Usuários** |
+| ![Ofícios](docs/telas/celular/43-oficios-livro.jpg) | ![Apresentações](docs/telas/celular/24-admin-apresentacoes.jpg) | ![Relatórios](docs/telas/celular/25-admin-relatorios.jpg) | ![Usuários](docs/telas/celular/28-admin-usuarios.jpg) |
+| **Privacidade (LGPD)** | **Portal: início** | **Portal: carteirinha** | **Portal: documentos** |
+| ![Privacidade (LGPD)](docs/telas/celular/52-admin-privacidade-aceites.jpg) | ![Portal: início](docs/telas/celular/34-membro-inicio.jpg) | ![Portal: carteirinha](docs/telas/celular/36-membro-carteirinha.jpg) | ![Portal: documentos](docs/telas/celular/37-membro-documentos.jpg) |
+| **Portal: pedidos do titular** | **Minha conta** |  |  |
+| ![Portal: pedidos do titular](docs/telas/celular/60-membro-pedidos.jpg) | ![Minha conta](docs/telas/celular/38-minha-conta.jpg) |  |  |
 
 ---
 
