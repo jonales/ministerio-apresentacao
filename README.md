@@ -334,8 +334,9 @@ Ofícios para a CONFRAMADEGO (separação ao diaconato e ao presbitério, consag
 
 #### Apresentação de crianças
 
-A apresentação é o registro oficial, e **é o único lugar onde o certificado de apresentação é emitido**.
+A apresentação é o registro oficial, e **é o único lugar onde o certificado de apresentação é emitido**. Fica no menu **Documentos e Relatórios › Apresentações** e segue o fluxo da carta e do ofício: registrar ou editar abre uma tela própria de elaboração, e a emissão fica na lista.
 
+- **Texto do certificado editável:** sai de um modelo com variáveis (`{{NASCIMENTO}}`, `{{PAI}}`, `{{MAE}}`, `{{DATA}}`, `{{CONGREGACAO}}`, `{{PASTOR}}`, `{{NOME}}`) e pode ser corrigido à mão. Enquanto não é mudado, acompanha os dados; "Refazer o texto pelo modelo" volta ao padrão. O quadro "Como vai sair" mostra o texto com os dados e avisa quando ele fica longo para a arte. Depois de salvar, **Pré-visualizar PDF** abre o certificado sem assinaturas e sem QR Code, só para conferir.
 - **Cadastro do bebê** na própria tela: nome, CPF (da certidão), data de nascimento e sexo. A criança fica na categoria *Criança*: não conta como membro, não entra nos relatórios de membros nem recebe carteirinha. A filiação é preenchida a partir dos pais.
 - **Mãe obrigatória:** vinculada ao cadastro, se for membro, ou pelo nome completo. O pai é opcional.
 - **Certificado numerado** (ex.: `AP-2026-000007`), na arte oficial (azul para menino, rosa para menina). Traz filiação, data, congregação, pastor, número da via e data de emissão.
@@ -345,7 +346,9 @@ A apresentação é o registro oficial, e **é o único lugar onde o certificado
   - Alterar os dados depois da emissão fica na auditoria.
   - Uma apresentação com certificado emitido não é excluída, só **cancelada**, com motivo.
 
-![Apresentações](docs/telas/24-admin-apresentacoes.jpg)
+| Lista de apresentações | Apresentação com o texto do certificado editável |
+|---|---|
+| ![Apresentações](docs/telas/24-admin-apresentacoes.jpg) | ![Edição da apresentação](docs/telas/67-admin-apresentacao-edicao.jpg) |
 
 ![Certificado de apresentação](docs/telas/24b-certificado-apresentacao.jpg)
 
