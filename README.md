@@ -139,6 +139,9 @@ Substitui as duas artes feitas à mão (escala de consagração e programação 
 - **Recepção:** o registro de visitantes sugere os cultos do dia da semana publicada.
 - **Calendário:** o que foi marcado "só nesta semana" entra no calendário, sem as pessoas.
 - **Imagens para o WhatsApp:** depois de publicar, os botões **Imagem da programação** e **Imagem da consagração** geram uma imagem pronta (900 × 1600), no lugar das artes feitas à mão. A letra diminui para caber em semanas cheias.
+- **Minhas escalas:** no portal, cada pessoa vê o que tem de hoje em diante nas semanas publicadas, com um card no início.
+- **Lembrete por e-mail:** na véspera, a partir das 18h, cada pessoa recebe o que tem no dia seguinte. Fica desligado até ser ligado em **Comunicação › Modelos de e-mail** (modelo **Lembrete de escala**) e segue a escolha de receber e-mails do membro.
+- **Sugerir rodízio:** na montagem, preenche os dias vazios da consagração com quem está há mais tempo sem escala nos últimos seis meses. Fica de fora quem está inativo ou em disciplina no dia. É só sugestão: quem monta confere e salva.
 - **Foto:** segue a resposta do membro sobre uso de imagem. Quem recusou aparece com as iniciais. Quem ainda não respondeu só aparece com foto para os gestores. O CPF não aparece na página.
 - **Permissão:** módulo **Programação da semana** no Controle de Acesso (Visualizar = ver as semanas, inclusive rascunhos; Editar = montar; Emitir = publicar). Pastor e secretário começam com as três, nas próprias congregações.
 
@@ -147,6 +150,8 @@ Substitui as duas artes feitas à mão (escala de consagração e programação 
 | ![Montagem da semana](docs/telas/69-admin-programacao-montagem.jpg) | ![Modo leitura](docs/telas/70-admin-programacao-leitura.jpg) |
 
 <img src="docs/telas/71-programacao-imagem.png" alt="Imagem da programação para o WhatsApp" width="300">
+
+![Minhas escalas no portal do membro](docs/telas/72-membro-escalas.jpg)
 
 #### Avisos do painel
 
