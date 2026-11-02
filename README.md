@@ -117,15 +117,40 @@ O menu lateral é organizado em grupos: Pessoas, Igreja e Agenda, Documentos e R
 
 O início do painel reúne:
 
-- **Avisos:** os avisos internos da congregação de quem vê (e os de todas), cadastrados em **Igreja e Agenda › Avisos do painel**, e os avisos e destaques que estão no site.
+- **Programação da semana** publicada da congregação, com a escala de consagração e as fotos das pessoas (também no portal do membro).
+- **Avisos:** os avisos da congregação de quem vê (e os de todas), cadastrados em **Igreja e Agenda › Avisos do painel**, e os avisos e destaques que estão no site. Os membros recebem o mesmo quadro no início do portal.
 - **Aniversariantes do mês**, separados por congregação, com o do dia marcado "Hoje" (para quem vê Membros; pastor e secretário veem só as próprias congregações).
 - **Atalhos rápidos** e o card **Contribua com o Ministério**, com a chave PIX (botão de copiar) e os dados bancários. O mesmo card aparece no início do portal do membro; o rodapé do site traz também o QR Code.
 
 ![Início do painel](docs/telas/10-admin-painel.jpg)
 
+#### Programação da semana
+
+Substitui as duas artes feitas à mão (escala de consagração e programação semanal): o que é preenchido uma vez aparece em todos os lugares. Fica em **Igreja e Agenda › Programação da semana**, por congregação.
+
+- **Abrir a semana:** a partir da agenda fixa da tela Cultos, da semana anterior (copia horários e pessoas; o que estava marcado "só nesta semana" fica de fora) ou em branco.
+- **Rascunho:** o pastor ou o secretário vai preenchendo durante a semana e clica em **Salvar rascunho**. Enquanto for rascunho, só quem monta vê. Se duas pessoas estiverem com a mesma semana aberta, a segunda a salvar é avisada, para uma não apagar o trabalho da outra.
+- **Escala de consagração:** um clique cria de segunda a sexta no horário informado (dá para incluir ou tirar dias). Dia sem pessoa aparece como "A definir".
+- **Programação:** para cada dia, horário, culto ou atividade, quem dirige, quem prega, responsável, departamento e observação. Dia sem item aparece como "Livre".
+- **Pessoas:** digite e escolha na lista (pastores e membros ativos da congregação) para ligar à pessoa, com título (Diac., Presb., Miss., Pr.) e foto. Pregador visitante ou ficha ainda inativa pode ser digitado: sai só o nome.
+- **Publicar:** a semana aparece no início do painel e no portal dos membros da congregação, com o dia de hoje em destaque. No domingo já aparece a semana seguinte, junto com o que ainda há hoje. Dá para corrigir depois de publicada ou voltar para rascunho; essas ações ficam na auditoria.
+- **Modo leitura:** a semana em letra grande, para ler no culto de domingo.
+- **Site público:** a janela "Nossos Cultos" mostra a semana publicada em curso, só com dia, hora e nome do culto (e quem prega, se já estiver em Pastores). Sem semana publicada, continua a agenda fixa. A escala de consagração e os demais nomes só aparecem depois do login, para os membros da congregação.
+- **Recepção:** o registro de visitantes sugere os cultos do dia da semana publicada.
+- **Calendário:** o que foi marcado "só nesta semana" entra no calendário, sem as pessoas.
+- **Imagens para o WhatsApp:** depois de publicar, os botões **Imagem da programação** e **Imagem da consagração** geram uma imagem pronta (900 × 1600), no lugar das artes feitas à mão. A letra diminui para caber em semanas cheias.
+- **Foto:** segue a resposta do membro sobre uso de imagem. Quem recusou aparece com as iniciais. Quem ainda não respondeu só aparece com foto para os gestores. O CPF não aparece na página.
+- **Permissão:** módulo **Programação da semana** no Controle de Acesso (Visualizar = ver as semanas, inclusive rascunhos; Editar = montar; Emitir = publicar). Pastor e secretário começam com as três, nas próprias congregações.
+
+| Montagem da semana | Modo leitura |
+|---|---|
+| ![Montagem da semana](docs/telas/69-admin-programacao-montagem.jpg) | ![Modo leitura](docs/telas/70-admin-programacao-leitura.jpg) |
+
+<img src="docs/telas/71-programacao-imagem.png" alt="Imagem da programação para o WhatsApp" width="300">
+
 #### Avisos do painel
 
-Recados para quem usa o sistema (secretaria, pastores, recepção): título, texto, para qual congregação (ou todas) e o período em que aparecem. Desativar tira o aviso do painel sem apagá-lo. Fora do administrador, cada um só cadastra para as próprias congregações; aviso para todas é só do administrador. Permissão **Avisos do painel** no Controle de Acesso (pastor e secretário começam com Visualizar e Editar).
+Recados para a congregação: título, texto, para qual congregação (ou todas) e o período em que aparecem. Vão para o início do painel e para o portal dos membros daquela congregação. Desativar tira o aviso do painel sem apagá-lo. Fora do administrador, cada um só cadastra para as próprias congregações; aviso para todas é só do administrador. Permissão **Avisos do painel** no Controle de Acesso (pastor e secretário começam com Visualizar e Editar).
 
 ![Avisos do painel](docs/telas/68-admin-avisos-painel.jpg)
 
